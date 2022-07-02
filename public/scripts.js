@@ -1,4 +1,4 @@
-var socket = io('https://chat-pi2022.herokuapp.com/')
+var socket = io('https://chat-pi2022.herokuapp.com')
 
         function renderMessage(message){
             $('.messages').append('<div class="message"><strong style="color:'+message.color+';">'+message.author+'</strong>:'+message.message+'</div>')
