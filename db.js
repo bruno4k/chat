@@ -38,10 +38,6 @@ async function selectMessage(){
     return rows
 }   
 
-setInterval(function () {
-    db.query('SELECT 1');
-}, 5000);
-
 async function selectLastMessage(){
     const conn = await connect()
     const [last] = await conn.query('SELECT * FROM messages where id = (select max(id) from messages)')
@@ -49,5 +45,8 @@ async function selectLastMessage(){
     return last
 } 
 
+setInterval(function () {
+    connection.query('SELECT 1');
+}, 5000);
 
 module.exports = {insertMessage, selectMessage, selectLastMessage}
